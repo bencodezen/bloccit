@@ -19,15 +19,15 @@
           <button class="close" type="button" data-dismiss="alert">&times;</button>
           <%= flash[:notice] %>
         </div>
-        <% elsif flash[:error] %>
-          <div class="alert alert-danger">
-            <button class="close" type="button" data-dismiss="alert">&times;</button>
-          </div>
-        <% elsif flash[:alert] %>
-          <div class="alert alert-warning">
-            <button class="close" type="button" data-dismiss="alert">&times;</button>
-          </div>
-        <% end %>   
+      <% elsif flash[:error] %>
+        <div class="alert alert-danger">
+          <button class="close" type="button" data-dismiss="alert">&times;</button>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-warning">
+          <button class="close" type="button" data-dismiss="alert">&times;</button>
+        </div>
+      <% end %>   
 
       <%= yield %>
     </div>
