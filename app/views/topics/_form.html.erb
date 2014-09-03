@@ -1,0 +1,6 @@
+<%= simple_form_for topic do |f| %>
+  <%= f.input :name, label: 'Enter topic name', input_html: { class: 'form-control' }, wrapper_html: { class: 'form-group' } %>
+  <%= f.input :description, label: 'Enter topic description', input_html: { class: 'form-control' }, wrapper_html: { class: 'form-group' } %>
+  <%= f.input :public, label: 'Public topic?', input_html: { class: 'checkbox' }, wrapper_html: { class: 'form-group' } %>
+  <%= f.button :submit, 'Save', class: 'btn btn-success' %>
+<% end %>
