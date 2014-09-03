@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     
     if @post.update_attributes(post_params)
       flash[:notice] = "Post was updated."
-      redirect_to @post
+      redirect_to [@topic, @post]
     else
       flash[:error] = "There was an error updating the post. Please try again."
       render :edit
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image, :image_cache)
   end
 end
