@@ -16,6 +16,7 @@
 
         <div class="pull-right user-info">
           <% if current_user %>
+            <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
             Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path %> or
@@ -32,10 +33,12 @@
       <% elsif flash[:error] %>
         <div class="alert alert-danger">
           <button class="close" type="button" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
         </div>
       <% elsif flash[:alert] %>
         <div class="alert alert-warning">
-          <button class="close" type="button" data-dismiss="alert">&times;</button>
+          <button class="close" type"button" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
         </div>
       <% end %>   
 

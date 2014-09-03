@@ -4,7 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :topic
 
   default_scope { order('created_at DESC') }
-  #scope :order_by_title, ->(title) { where() }
+  scope :order_by_title, -> { reorder('title ASC')}
+  scope :order_by_reverse_created_at, -> { reorder('created_at ASC') }
 
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
@@ -12,7 +13,7 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
 
   def markdown_title
-    render_as_markdown(title)
+    render_as_markdown(title) 
   end
 
   def markdown_body
