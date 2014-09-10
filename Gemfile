@@ -9,6 +9,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'rspec-rails'
+end
+
 group :development do
   gem 'sqlite3'
   gem 'binding_of_caller'
