@@ -17,7 +17,7 @@ describe FavoritesController do
 
       post :create, { post_id: @post.id }
 
-      expect( @user.favorites.find_by_post_id(@post.id) ).to eq(Favorite)
+      expect( @user.favorites.find_by_post_id(@post.id).class ).to eq(Favorite)
     end
   end
 
