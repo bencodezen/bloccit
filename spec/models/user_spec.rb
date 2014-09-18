@@ -15,8 +15,8 @@ describe User do
     end
 
     it "returns the appropriate favorite if it exists" do
-      post :create, { post_id: @post.id }
-      expect( @user.favorited(@post) ).to eq(Favorite)
+      favorite = @user.favorites.create(post: @post)
+      expect( @user.favorited(@post) ).to eq(favorite)
     end
   end
 end
