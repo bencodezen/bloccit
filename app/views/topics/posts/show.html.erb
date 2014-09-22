@@ -10,13 +10,17 @@
     <div><%= image_tag(@post.image.url) if @post.image? %></div>
     <p><%= @post.markdown_body %></p>
     <% if policy(Comment).create? %>
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: Comment.new } %>
+      <div class="new-comment">
+        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: Comment.new } %>
+      </div>
     <% end %>
     <hr>
     <div class="row">
       <div class="col-md-8">
         <p class="lead">Comments</p>
-        <%= render partial: 'comments/comment', collection: @post.comments  %>
+        <div class="js-comments">
+          <%= render partial: 'comments/comment', collection: @post.comments  %>
+        </div>
       </div>
     </div>
   </div>
