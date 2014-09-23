@@ -14,12 +14,14 @@ group :test do
   gem 'capybara', '~> 2.3.0'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'pry-rails'
 end
 
 group :development do
   gem 'sqlite3'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'pry-rails'
 end
 
 # Use SCSS for stylesheets
