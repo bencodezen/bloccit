@@ -24,6 +24,8 @@ group :development do
   gem 'pry-rails'
 end
 
+gem 'newrelic_rpm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
